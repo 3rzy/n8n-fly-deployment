@@ -1,0 +1,25 @@
+Kategoria,Podkategoria,Opis
+Instalacja n8n na Fly.io,Wymagania,Konto na Fly.io; zainstalowane narzędzie flyctl; obraz Docker n8n
+Instalacja n8n na Fly.io,Komendy podstawowe,fly launch --image n8nio/n8n; fly volumes create n8n_data; fly deploy
+Instalacja n8n na Fly.io,Zmienne środowiskowe,DB_TYPE=sqlite; DB_SQLITE_VACUUM_ON_STARTUP=true; WEBHOOK_URL=https://{nazwa-app}.fly.dev; N8N_HOST={nazwa-app}.fly.dev
+Instalacja n8n na Fly.io,Zasoby,Wymagana pamięć: minimum 2GB RAM; fly scale memory 2048 -a {nazwa-app}
+Konfiguracja n8n na Fly.io,Konfiguracja bazy danych,Można używać SQLite (zalecane dla prostych instalacji) lub PostgreSQL (wymagana dodatkowa konfiguracja)
+Konfiguracja n8n na Fly.io,Konfiguracja portów,W pliku fly.toml ustawienie internal_port=5678 w sekcji [http_service]
+Konfiguracja n8n na Fly.io,Szyfrowanie danych,Ustawienie N8N_ENCRYPTION_KEY dla bezpiecznego przechowywania danych uwierzytelniających
+Konfiguracja n8n na Fly.io,Zarządzanie użytkownikami,Opcjonalne ustawienie N8N_USER_MANAGEMENT_DISABLED=false dla umożliwienia zarządzania użytkownikami
+Przenoszenie danych,Wolumeny,Fly używa wolumenów dla przechowywania danych n8n; są one mapowane do /home/node/.n8n
+Przenoszenie danych,Kopie zapasowe,Można używać fly ssh console -a {nazwa-app} do dostępu do powłoki i tworzenia kopii
+Rozwiązywanie problemów,Braki pamięci,Najczęstszy problem to OOM (Out of Memory); rozwiązanie: fly scale memory 2048 -a {nazwa-app}
+Rozwiązywanie problemów,Logi aplikacji,Sprawdzanie logów: fly logs -a {nazwa-app}
+Rozwiązywanie problemów,Restart aplikacji,Restart aplikacji po zmianach: fly apps restart {nazwa-app}
+Rozwiązywanie problemów,Problemy z webhookami,Upewnić się że WEBHOOK_URL i N8N_HOST są poprawnie skonfigurowane
+Dostęp do aplikacji,URL,Aplikacja dostępna pod adresem https://{nazwa-app}.fly.dev
+Dostęp do aplikacji,Ciągłość działania,Aplikacja działa 24/7 niezależnie od zamknięcia przeglądarki
+Zarządzanie aplikacją,Zatrzymywanie,fly apps stop {nazwa-app}
+Zarządzanie aplikacją,Uruchamianie,fly apps start {nazwa-app}
+Zarządzanie aplikacją,Monitorowanie,fly status -a {nazwa-app}; fly logs -a {nazwa-app}
+Zarządzanie aplikacją,Skalowanie,fly scale memory {rozmiar-w-MB} -a {nazwa-app}; fly scale vm {rozmiar-maszyny} -a {nazwa-app}
+Koszty,Darmowy plan,Darmowy plan obejmuje 3 maszyny shared-cpu-1x z 256MB RAM; jedna maszyna może być skalowana do 2GB RAM
+Koszty,Limity,Po przekroczeniu limitów darmowych naliczane są opłaty; sprawdź aktualny cennik na fly.io/docs/about/pricing
+Bezpieczeństwo,Zmienne środowiskowe,Przechowywanie sekretów jako zmienne środowiskowe: fly secrets set NAZWA=WARTOŚĆ -a {nazwa-app}
+Bezpieczeństwo,Szyfrowanie danych,Ustawienie N8N_ENCRYPTION_KEY zabezpiecza dane uwierzytelniające w bazie danych
