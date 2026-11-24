@@ -1,3 +1,32 @@
+<!-- HYDRA_IDENTITY_CARD_START -->
+# n8n-fly-deployment
+
+## 🆔 Karta Tożsamości Repozytorium (Hydra Ecosystem)
+
+| Pole | Wartość |
+| :--- | :--- |
+| **Status repozytorium** | `LIBRARY` |
+| **Status komponentów** | `REUSABLE_DEVOPS` |
+| **Cel** | Zestaw skryptów, konfiguracji fly.toml oraz bazy wiedzy CSV do niezawodnego wdrażania n8n na platformie Fly.io. |
+| **Rola w ekosystemie** | Gotowy wzorzec infrastrukturalny DevOps dla środowiska automatyzacji n8n w chmurze PaaS. |
+| **CURRENT (Stan bieżący)** | Pushed: 2025-04-19T08:48:58Z, HEAD SHA: c25512fe5f2716617e30b73d771eb7059581600c (commit date: 2025-04-19T08:48:58Z), root files count: 4. Weryfikacja: 2026-11-24 via GitHub REST API. |
+| **TARGET (Stan docelowy)** | Włączenie sprawdzonych procedur do infrastruktura serwerowa VPS / rdzeń ekosystemu Hydra lub zachowanie jako samodzielna biblioteka wdrożeniowa. |
+| **Zależności** | Flyctl, Fly.io PaaS, Docker, n8n. |
+| **Supersedes (Zastępuje)** | n8n-on-fly, n8n-on-fly-docs. |
+| **Superseded by (Zastąpione przez)** | Brak. |
+| **Źródło prawdy** | Repozytorium GitHub: 3rzy/n8n-fly-deployment. |
+| **Owner** | Krzy (3rzy) |
+| **Ostatnia weryfikacja** | 2026-11-24 |
+
+### Klocki do ponownego wykorzystania (Reusable Blocks)
+Baza wiedzy konfiguracji zmiennych n8n (n8n_fly_wiedza.csv), skrypty fly.toml, procedury montowania wolumenów i certyfikatów SSL.
+
+### Rekomendacja porządkowa
+PROPOSE_KEEP_AS_LIBRARY: Sprawdzone i kompletne procedury deploymentu n8n.
+
+---
+<!-- HYDRA_IDENTITY_CARD_END -->
+
 # Wdrożenie n8n na platformie Fly.io
 
 ## Wprowadzenie
